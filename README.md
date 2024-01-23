@@ -74,7 +74,6 @@ $record_level [地點] [練等時間] [碎片掉落] [當前等級與趴數] [�
 ```
 $[info]
 ```
-![image](https://hackmd.io/_uploads/HJDVQn3tT.png)
 Ex.
 ```
 $破風
