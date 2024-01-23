@@ -1,6 +1,8 @@
 # MS_discord_bot
 The discord bot about maplestory.
 
+![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/maplemonster.jpg)
+
 ## Enviroment
 - Python version: 3.10.0
 - discord.py 2.3.2
