@@ -38,7 +38,7 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        bot_token = "MTE5NDg4OTQ4MDM5MDMyNDMzNA.Gg5t0M.tAHOiSRWGjIswWgYUMPBxHe5Uf-8T6md6CzCN0"
+        bot_token = "設定成自己的bot_token"
         await bot.start(bot_token)
 
 # 確定執行此py檔才會執行
