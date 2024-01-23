@@ -18,7 +18,7 @@ $update level [等級_當前趴數(小數點後三位)]
 $record_level [地點] [練等時間] [碎片掉落] [當前等級與趴數] [金幣獲得量] [道具掉落率] [楓幣掉落率]
 ```
 如果顯示:
-![image](https://hackmd.io/_uploads/SyyTUn2Fa.png)
+![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_1.png)
 即代表完成，未顯示代表輸入有誤 (不知道錯在哪可以直接問我)。
 
 ## How to use in detail (不定期更新)
@@ -41,7 +41,7 @@ $show [user_id in the server]
 if you are not input the **user_id** (not user_name), then will show your own information about your character.
 We display character information through **discord embeded**.
 like the example below:
-![image](https://hackmd.io/_uploads/Hknass2Ka.png)
+![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_2.png)
 
 ### Update your own character's information
 ```
