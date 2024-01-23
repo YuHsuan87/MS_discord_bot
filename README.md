@@ -19,6 +19,7 @@ $record_level [地點] [練等時間] [碎片掉落] [當前等級與趴數] [�
 ```
 如果顯示:
 ![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_1.png)
+
 即代表完成，未顯示代表輸入有誤 (不知道錯在哪可以直接問我)。
 
 ## How to use in detail (不定期更新)
@@ -41,7 +42,7 @@ $show [user_id in the server]
 if you are not input the **user_id** (not user_name), then will show your own information about your character.
 We display character information through **discord embeded**.
 like the example below:
-![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_2.png)
+![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_2.jpg)
 
 ### Update your own character's information
 ```
