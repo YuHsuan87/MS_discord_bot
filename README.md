@@ -22,9 +22,15 @@ $update piece [當前愛爾達碎片數量]
 $record_level [地點] [練等時間] [當前愛爾達碎片數量] [當前等級_當前趴數] [金幣獲得量] [道具掉落率] [楓幣掉落率]
 ```
 - 如果會在**練等途中使用碎片**，也要把使用的數量，加回 **當前碎片數量個數** 喔。(Ex. 使用 20 + 練等最後身上有 40, 最後必須登入 60)
-如果顯示:
+### 範例
+- 練等前狀態: **284等 04.012%, 碎片量 13 個**
+    - $update level 284_04.012
+    - $update piece 13
+- 練等後狀態: **284等 09.520%, 碎片量 105 個, 身上錢 720,306,780**
+    - $record_level 夏1 2 105 284_09.520 720306780 184 204
+- 顯示
 
-![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_1.png)
+![image](https://github.com/YuHsuan87/MS_discord_bot/blob/main/readmd_pic/readmd_1.jpg)
 
 即代表完成，未顯示代表輸入有誤 (不知道錯在哪可以直接問我)。
 
