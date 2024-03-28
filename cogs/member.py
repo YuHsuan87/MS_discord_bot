@@ -54,9 +54,13 @@ def check_level_format(level_str: str):
     if('_' not in level_str):
         return True
     tmp = level_str.split('_')
-    if(len(tmp[1]) != 6 or len(tmp[0]) == 0):
+    # level must be int
+    if(not tmp[0].isdigit()):
         return True
-    
+    # exp must be float
+    if(len(tmp[1]) != 5 and len(tmp[1]) != 6):
+        return True
+
     return False
 
 def check_hex_3_level(level_str: str):
@@ -94,7 +98,7 @@ class Member(commands.Cog):
             embed=discord.Embed(title="TMS information", url="https://youtu.be/OIBODIPC_8Y?si=zHqG8qvIYJGutWQc", description="About TMS", 
                                 color=0x60e176, timestamp=datetime.now())
             embed.set_author(name=ctx.author.global_name, url="https://maplestory.beanfun.com/main")
-            pic_path = os.path.join("cogs", "pic", user_info[4])
+            pic_path = os.path.join("cogs", "pic", "character", user_info[4])
             pic_file = discord.File(pic_path)
             embed.set_thumbnail(url=f"attachment://{user_info[4]}")
             embed.add_field(name="遊戲名稱", value=user_info[0], inline=False)
@@ -172,10 +176,32 @@ class Member(commands.Cog):
 
         # Final, update the level information in database.csv
         updated_status = update_info(name_str, 'level', cur)
-        updated_status = update_info(name_str, 'piece', update_piece)
+        updated_status = update_info(name_str, 'piece', piece)
         await ctx.send(f'Record of training status is done! Thank you~ :D')
+    
+    @commands.command(brief="- Show the training statistic data.", description="show the user's total data in the training you record.")
+    async def total(self, ctx:commands.Context, user_name = None):
+        name_str = ctx.author.name if user_name is None else user_name
+        # user_info = show_info(name_str)
+        file_path = os.path.join('cogs', 'record.csv')
+        with open(file_path, newline='', encoding='utf-8') as csvfile:
+            # 讀取 CSV 檔案內容
+            rows = csv.reader(csvfile)
+            list_data = list(rows)
 
+        # statistic data
+        record_count = 0
+        total_time = 0
+        total_piece = 0
+        for i in range(1, len(list_data)):
+            if(list_data[i][0] == name_str):
+                record_count += 1
+                total_time += float(list_data[i][3])
+                total_piece += int(list_data[i][4])
 
+        show_text = f'{name_str}\n- 登錄次數: {record_count}\n- 總練等時數: {total_time} hrs\n- 總碎片獲取量: {total_piece}'
+        await ctx.send(show_text)
+                
 # Cog 載入 Bot 中
 async def setup(bot: commands.Bot):
     await bot.add_cog(Member(bot))

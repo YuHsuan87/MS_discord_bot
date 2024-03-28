@@ -3,6 +3,7 @@ import asyncio
 import discord
 from discord.ext import commands
 
+
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix = "$", intents = intents)
 
@@ -38,7 +39,7 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        bot_token = "設定成自己的bot_token"
+        bot_token = "MTE5NDg4OTQ4MDM5MDMyNDMzNA.GDkjAe.6dxVpQFnYjDdfdGMmn6SdhVzwvNMhc3K1bAvfc"
         await bot.start(bot_token)
 
 # 確定執行此py檔才會執行
